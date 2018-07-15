@@ -6,6 +6,8 @@
 </head>
 <body>
     <div class="container">
+    <p class="alert-success"><?=$this->session->flashdata("success")?></p>
+    <p class="alert-danger"><?=$this->session->flashdata("danger")?></p>
     <h1>Produtos</h1>
     <table class="table">
         <?PHP foreach ($produtos as $produto) : ?>
@@ -15,6 +17,10 @@
         </tr>
         <?PHP endforeach ?>
     </table>
+
+    <?PHP if($this->session->userdata("usuario_logado")) : ?>
+        <?=anchor('login/logout', 'Logout', array("class" => "btn btn-primary"))?>
+    <?PHP endif?>
 
     <?PHP if (! $this->session->userdata("usuario_logado")) : ?>
     <h1>Login</h1>
@@ -74,6 +80,7 @@
     echo form_close();
     endif
     ?>
+
     </div>
 </body>
 </html>
