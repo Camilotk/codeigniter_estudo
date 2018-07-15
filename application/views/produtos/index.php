@@ -18,7 +18,7 @@
 
     <h1>Cadastro</h1>
     <?PHP
-    echo form_open("usuarios/novo");
+    echo form_open("Usuarios/novo/");
     echo form_label("Nome", "inNome");
     echo form_input(array(
         "name" => "Nome",
@@ -40,10 +40,9 @@
         "class" => "form-control"
     ));
     echo form_button(array(
-        "name" => "Cadatrar",
-        "id" => "btnCadastrar",
         "content" => "Cadastrar",
-        "class" => "btn btn-primary"
+        "class" => "btn btn-primary",
+        "type" => "submit"
     ));
     echo form_close();
     ?>
