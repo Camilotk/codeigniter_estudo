@@ -8,4 +8,21 @@ class Produtos extends CI_Controller {
         $this->load->helper(array('currency', 'url', 'form'));
         $this->load->view("produtos/index.php", $dados);
     }
+
+    public function formulario() {
+        $this->load->helper('form');
+        $this->load->view("produtos/formulario");
+    }
+
+    public function novo(){
+        $produto = array(
+            "nome" => $this->input->post("nome"), 
+            "preco" => $this->input->post("preco"), 
+            "descricao" => $this->input->post("descricao")
+        );
+
+        $this->load->model("produtos_model");
+        $this->produtos_model->salva($produto);
+        redirect('/');
+    }
 }

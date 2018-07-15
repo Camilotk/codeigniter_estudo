@@ -19,6 +19,10 @@
     </table>
 
     <?PHP if($this->session->userdata("usuario_logado")) : ?>
+        <?=anchor('produtos/formulario', 'Cadastrar produto', array("class" => "btn btn-primary"))?>
+    <?PHP endif?>
+
+    <?PHP if($this->session->userdata("usuario_logado")) : ?>
         <?=anchor('login/logout', 'Logout', array("class" => "btn btn-primary"))?>
     <?PHP endif?>
 
