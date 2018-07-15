@@ -16,6 +16,7 @@
         <?PHP endforeach ?>
     </table>
 
+    <?PHP if (! $this->session->userdata("usuario_logado")) : ?>
     <h1>Login</h1>
     <?PHP
     echo form_open("login/autenticar");
@@ -39,6 +40,7 @@
         "type" => "submit"
     ));
     echo form_close();
+    
     ?>
     
     <h1>Cadastro</h1>
@@ -70,6 +72,7 @@
         "type" => "submit"
     ));
     echo form_close();
+    endif
     ?>
     </div>
 </body>
