@@ -6,12 +6,12 @@ class Produtos extends CI_Controller {
         $produtos = $this->produtos_model->buscaTodos();
         $dados = array("produtos" => $produtos);
         $this->load->helper(array('currency', 'url', 'form'));
-        $this->load->view("produtos/index.php", $dados);
+        $this->load->template("produtos/index.php", $dados);
     }
 
     public function formulario() {
         $this->load->helper('form');
-        $this->load->view("produtos/formulario");
+        $this->load->template("produtos/formulario");
     }
 
     public function novo(){

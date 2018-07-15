@@ -9,9 +9,8 @@ class Usuarios extends CI_Controller {
             "senha" => md5($this->input->post("Senha"))
         );
 
-        $this->load->database();
         $this->load->model("usuarios_model");
         $this->usuarios_model->salva($usuario);
-        $this->load->view("usuario/novo", $usuario);
+        $this->load->template("usuario/novo", $usuario);
     }
 }
